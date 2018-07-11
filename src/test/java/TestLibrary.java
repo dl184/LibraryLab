@@ -6,15 +6,16 @@ import org.junit.Test;
 public class TestLibrary {
 
     Book book;
-    Borrower borrowerl
+    Borrower borrower;
 
     @Before
     public void setUp() throws Exception {
 
-        Book book = new Book();
-        Borrower borrower = new Borrower();
-
+        Book book = new Book("Trouble in Paradise", "Derek Leach", "Romantic tragedy", false);
+        Borrower borrower = new Borrower("Richard");
     }
+
+
 
 
 

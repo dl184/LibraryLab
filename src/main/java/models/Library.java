@@ -27,12 +27,13 @@ public class Library {
     }
 
     public void addBookToBorrower(Borrower borrower, Book book){
-        borrower.getBorrowedBook().add(book);
+        borrower.getBorrowedBooks().add(book);
     }
 
     public void loanBook(Borrower borrower, Book book){
         addBookToBorrower(borrower, book);
         removeBookFromLibrary(book);
+        book.setOnLoan(true);
     }
 
     public int getId() {
