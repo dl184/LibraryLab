@@ -1,7 +1,5 @@
 package models;
 
-
-
 public class Book {
 
     private int id;
@@ -12,14 +10,13 @@ public class Book {
     private Borrower borrower;
 
     public Book(){
-
     }
 
-    public Book(String title, String author, String genre, Boolean onLoan) {
+    public Book(String title, String author, String genre) {
         this.title = title;
         this.author = author;
         this.genre = genre;
-        this.onLoan = onLoan;
+        this.onLoan = false;
     }
 
 
