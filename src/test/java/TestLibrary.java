@@ -11,7 +11,7 @@ public class TestLibrary {
     @Before
     public void setUp() throws Exception {
 
-        Book book = new Book("Trouble in Paradise", "Derek Leach", "Romantic tragedy", false);
+        Book book = new Book("Trouble in Paradise", "Derek Leach", "Romantic tragedy");
         Borrower borrower = new Borrower("Richard");
     }
 
