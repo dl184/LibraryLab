@@ -9,17 +9,20 @@ public class Book {
     private String author;
     private String genre;
     private Boolean onLoan;
+    private Borrower borrower;
 
     public Book(){
 
     }
 
-    public Book(String title, String author, String genre, Boolean onLoan) {
+    public Book(String title, String author, String genre, Boolean onLoan, Borrower borrower) {
         this.title = title;
         this.author = author;
         this.genre = genre;
         this.onLoan = onLoan;
+        this.borrower = borrower;
     }
+
 
     public String getTitle() {
         return title;
@@ -51,5 +54,13 @@ public class Book {
 
     public void setOnLoan(Boolean onLoan) {
         this.onLoan = onLoan;
+    }
+
+    public Borrower getBorrower() {
+        return borrower;
+    }
+
+    public void setBorrower(Borrower borrower) {
+        this.borrower = borrower;
     }
 }
