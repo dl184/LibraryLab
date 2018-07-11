@@ -1,8 +1,11 @@
 package models;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
+@Table(name="libraries")
 public class Library {
 
     int id;
@@ -42,8 +45,12 @@ public class Library {
                     book.setOnLoan(true);
                 }
             }
-        }
 
+    }
+
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @Column(name="id")
     public int getId() {
         return id;
     }
@@ -52,6 +59,7 @@ public class Library {
         this.id = id;
     }
 
+    @Column(name="name")
     public String getName() {
         return name;
     }
@@ -60,6 +68,7 @@ public class Library {
         this.name = name;
     }
 
+    @OneToMany(mappedBy = "library")
     public List<Book> getBookCollection() {
         return bookCollection;
     }
@@ -68,6 +77,7 @@ public class Library {
         this.bookCollection = bookCollection;
     }
 
+    @OneToMany(mappedBy = "library")
     public List<Borrower> getBorrowers() {
         return borrowers;
     }

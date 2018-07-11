@@ -18,9 +18,9 @@ public class TestLibrary {
     public void setUp() throws Exception {
 
         library = new Library("The Derek Leach Library for Contemporary Romance");
-        book1 = new Book("Trouble in Paradise", "Derek Leach", "Romantic tragedy");
-        book2 = new Book("All Loved Up", "Redek Cheal", "Romance");
-        borrower = new Borrower("Richard");
+        book1 = new Book("Trouble in Paradise", "Derek Leach", "Romantic tragedy", library);
+        book2 = new Book("All Loved Up", "Redek Cheal", "Romance", library);
+        borrower = new Borrower("Richard", library);
     }
 
     @Test
