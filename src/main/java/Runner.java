@@ -1,4 +1,5 @@
 import db.DBHelper;
+import db.DBLibrary;
 import models.Book;
 import models.Borrower;
 import models.Library;
@@ -15,12 +16,15 @@ public class Runner {
         Book book2 = new Book("All Loved Up", "Redek Cheal", "Romance", library);
         DBHelper.save(book2);
 
+        DBLibrary.addBookToLibrary(book1, library);
+        DBLibrary.addBookToLibrary(book2, library);
+
         Borrower borrower1 = new Borrower("Richard", library);
         DBHelper.save(borrower1);
         Borrower borrower2 = new Borrower("Derek", library);
         DBHelper.save(borrower2);
 
-
+        DBLibrary.loanBook(library, borrower1, book1);
 
     }
 }

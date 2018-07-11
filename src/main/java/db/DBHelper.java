@@ -13,21 +13,7 @@ public class DBHelper {
         session = HibernateUtil.getSessionFactory().openSession();
         try {
             transaction = session.beginTransaction();
-            session.save(object);
-            transaction.commit();
-        } catch (HibernateException e) {
-            transaction.rollback();
-            e.printStackTrace();
-        } finally {
-            session.close();
-        }
-    }
-
-    public static void update(Object object){
-        session = HibernateUtil.getSessionFactory().openSession();
-        try {
-            transaction = session.beginTransaction();
-            session.update(object);
+            session.saveOrUpdate(object);
             transaction.commit();
         } catch (HibernateException e) {
             transaction.rollback();
