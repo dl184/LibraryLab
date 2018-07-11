@@ -15,12 +15,11 @@ public class Book {
 
     }
 
-    public Book(String title, String author, String genre, Boolean onLoan, Borrower borrower) {
+    public Book(String title, String author, String genre, Boolean onLoan) {
         this.title = title;
         this.author = author;
         this.genre = genre;
         this.onLoan = onLoan;
-        this.borrower = borrower;
     }
 
 
