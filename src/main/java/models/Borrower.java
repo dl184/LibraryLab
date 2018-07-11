@@ -11,7 +11,6 @@ public class Borrower {
     private int id;
     private String name;
     List<Book> borrowedBooks;
-    Library library;
 
     public Borrower(){
 
