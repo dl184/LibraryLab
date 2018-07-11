@@ -1,5 +1,6 @@
 package models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Library {
@@ -12,10 +13,10 @@ public class Library {
     public Library() {
     }
 
-    public Library(String name, List<Book> bookCollection, List<Borrower> borrowers) {
+    public Library(String name) {
         this.name = name;
-        this.bookCollection = bookCollection;
-        this.borrowers = borrowers;
+        this.bookCollection = new ArrayList<Book>();
+        this.borrowers = new ArrayList<Borrower>();
     }
 
     public void addBookToLibrary(Book book){
@@ -28,13 +29,20 @@ public class Library {
 
     public void addBookToBorrower(Borrower borrower, Book book){
         borrower.getBorrowedBooks().add(book);
+        book.setBorrower(borrower);
     }
 
-    public void loanBook(Borrower borrower, Book book){
-        addBookToBorrower(borrower, book);
-        removeBookFromLibrary(book);
-        book.setOnLoan(true);
-    }
+    public void loanBook(Borrower borrower, Book bookToBeLoaned){
+        ArrayList<Book> checkingArray = new ArrayList<Book>(this.bookCollection);
+        for (Book book : checkingArray) {
+            if (book == bookToBeLoaned && !book.getOnLoan()){
+
+                    addBookToBorrower(borrower, book);
+                    removeBookFromLibrary(book);
+                    book.setOnLoan(true);
+                }
+            }
+        }
 
     public int getId() {
         return id;

@@ -1,7 +1,5 @@
 package models;
 
-
-
 public class Book {
 
     private int id;
@@ -12,7 +10,6 @@ public class Book {
     private Borrower borrower;
 
     public Book(){
-
     }
 
     public Book(String title, String author, String genre) {
