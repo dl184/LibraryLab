@@ -11,14 +11,16 @@ public class Borrower {
     private int id;
     private String name;
     List<Book> borrowedBooks;
+    Library library;
 
     public Borrower(){
 
     }
 
-    public Borrower(String name) {
+    public Borrower(String name, Library library) {
         this.name = name;
         this.borrowedBooks = new ArrayList<Book>();
+        this.library = library;
     }
 
     @Id
@@ -50,5 +52,13 @@ public class Borrower {
         this.borrowedBooks = borrowedBook;
     }
 
+    @ManyToOne
+    @JoinColumn(name="library_id", nullable = true)
+    public Library getLibrary() {
+        return library;
+    }
 
+    public void setLibrary(Library library) {
+        this.library = library;
+    }
 }
