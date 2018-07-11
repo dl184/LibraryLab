@@ -21,7 +21,6 @@ public class TestLibrary {
         book1 = new Book("Trouble in Paradise", "Derek Leach", "Romantic tragedy");
         book2 = new Book("All Loved Up", "Redek Cheal", "Romance");
         borrower = new Borrower("Richard");
-
     }
 
     @Test
